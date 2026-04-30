@@ -52,27 +52,27 @@
 
 ```mermaid
 graph TD
-    A[🕒 GitHub Actions 排程器] -->|每日 09:00 自動觸發| B(main.py 系統調度中樞)
+    A["🕒 GitHub Actions 排程器"] -->|"每日 09:00 自動觸發"| B("main.py 系統調度中樞")
     
-    subgraph 階段一：資料擷取
-    B -->|1. 啟動爬蟲| C[[fetcher_engine.py]]
-    C -->|ArXiv API| D[(學術論文)]
-    C -->|RSS Feeds| E[(科技新聞)]
-    D & E -->|資料清洗與正規化| F[📄 fetcher_output.json]
+    subgraph Phase1 ["階段一：資料擷取"]
+        B -->|"1. 啟動爬蟲"| C[["fetcher_engine.py"]]
+        C -->|"ArXiv API"| D[("學術論文")]
+        C -->|"RSS Feeds"| E[("科技新聞")]
+        D & E -->|"資料清洗與正規化"| F["📄 fetcher_output.json"]
     end
 
-    subgraph 階段二：AI 智能分析
-    F -->|2. 載入原始數據| G[[analyzer.py]]
-    G <-->|API 呼叫與 PDF 傳輸| H((Google Gemini LLM))
-    G -->|評分、翻譯、摘要、統計| I[📄 final_report.json]
+    subgraph Phase2 ["階段二：AI 智能分析"]
+        F -->|"2. 載入原始數據"| G[["analyzer.py"]]
+        G <-->|"API 呼叫與 PDF 傳輸"| H(("Google Gemini LLM"))
+        G -->|"評分、翻譯、摘要、統計"| I["📄 final_report.json"]
     end
 
-    subgraph 階段三：資料庫同步
-    I -->|3. 載入分析報告| J[[notion_sync.py]]
-    J <-->|REST API / 自動去重| K((Notion 工作區))
-    K -.-> L[Dashboard 總覽摘要]
-    K -.-> M[論文與新聞資料庫]
-    K -.-> N[關鍵字熱度與趨勢記錄]
+    subgraph Phase3 ["階段三：資料庫同步"]
+        I -->|"3. 載入分析報告"| J[["notion_sync.py"]]
+        J <-->|"REST API / 自動去重"| K(("Notion 工作區"))
+        K -.-> L["Dashboard 總覽摘要"]
+        K -.-> M["論文與新聞資料庫"]
+        K -.-> N["關鍵字熱度與趨勢記錄"]
     end
     
     classDef file fill:#2b3137,stroke:#fafbfc,stroke-width:2px,color:#fff;
