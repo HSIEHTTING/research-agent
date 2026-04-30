@@ -1,0 +1,6 @@
+arxiv
+feedparser
+google-genai
+notion-client
+httpx
+python-dotenv
