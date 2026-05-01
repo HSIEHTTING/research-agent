@@ -2,8 +2,8 @@ name: Daily AI Agent Sync
 
 on:
   schedule:
-    # UTC 01:00 對應台灣時間 (UTC+8) 早上 09:00
-    - cron: '0 1 * * *'
+    # UTC 01:15 對應台灣時間 (UTC+8) 早上 09:15，避開整點伺服器塞車
+    - cron: '15 1 * * *'
   workflow_dispatch: # 允許在 GitHub 網頁上手動觸發
 
 jobs:
