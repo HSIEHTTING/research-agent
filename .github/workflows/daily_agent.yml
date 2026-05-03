@@ -2,8 +2,9 @@ name: Daily AI Agent Sync
 
 on:
   schedule:
-    # UTC 01:15 對應台灣時間 (UTC+8) 早上 09:15，避開整點伺服器塞車
-    - cron: '15 1 * * *'
+    # UTC 22:17 對應台灣時間 (UTC+8) 早上 06:17。
+    # 因為 GitHub 免費伺服器常有 2~3 小時的嚴重排程延遲，提早排程以確保早上能看到結果。
+    - cron: '17 22 * * *'
   workflow_dispatch: # 允許在 GitHub 網頁上手動觸發
 
 jobs:
