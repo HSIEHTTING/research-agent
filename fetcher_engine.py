@@ -46,7 +46,7 @@ logger = logging.getLogger("fetcher_engine")
 # ─────────────────────────────────────────────────────────────────────────────
 ARXIV_CATEGORIES: List[str] = ["cat:cs.LG", "cat:cs.AI"]
 ARXIV_MAX_RESULTS: int = 100          # 每個分類最多抓取筆數
-ARXIV_LOOKBACK_HOURS: int = 24        # 僅抓取過去 N 小時的論文（24 小時）
+ARXIV_LOOKBACK_HOURS: int = 72        # 僅抓取過去 N 小時的論文（考量到 ArXiv 週末不發布及審核延遲，放寬至 72 小時）
 ARXIV_TOTAL_MAX: int = 20             # 所有分類去重後的論文總上限
 
 NEWS_LOOKBACK_HOURS: int = 24         # 新聞日期過濾器：僅保留過去 N 小時內的新聞
