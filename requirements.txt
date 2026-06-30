@@ -4,3 +4,8 @@ google-genai
 notion-client
 httpx
 python-dotenv
+
+# Qdrant & Embedding
+langchain-text-splitters
+sentence-transformers
+qdrant-client

@@ -37,3 +37,12 @@ jobs:
           TREND_DB_ID: ${{ secrets.TREND_DB_ID }}
         run: |
           python main.py
+
+      - name: Sync Notion to Qdrant
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          PAPER_DB_ID: ${{ secrets.PAPER_DB_ID }}
+          NEWS_DB_ID: ${{ secrets.NEWS_DB_ID }}
+          QDRANT_URL: ${{ secrets.QDRANT_URL }}
+          QDRANT_API_KEY: ${{ secrets.QDRANT_API_KEY }}
+        run: python qdrant_sync.py
